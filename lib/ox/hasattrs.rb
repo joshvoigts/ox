@@ -14,8 +14,8 @@ module Ox
       @attributes
     end
 
-    # Adds or sets the attributes of the element.
-    # @param [hash] hash of attributes
+    # Sets the attributes of the element.
+    # @param [hash] hash hash of attributes
     def attributes=(attrs)
       raise "argument to attributes must be a Hash." unless attrs.is_a?(Hash)
       @attributes = attrs
