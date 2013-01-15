@@ -1,4 +1,3 @@
-
 module Ox
 
   # An Object that includes the HasAttrs module can have attributes which are a Hash of String values and either String
@@ -14,7 +13,14 @@ module Ox
       @attributes = { } if !instance_variable_defined?(:@attributes) or @attributes.nil?
       @attributes
     end
-    
+
+    # Adds or sets the attributes of the element.
+    # @param [hash] hash of attributes
+    def attributes=(attrs)
+      raise "argument to attributes must be a Hash." unless attrs.is_a?(Hash)
+      @attributes = attrs
+    end
+
     # Returns the value of an attribute.
     # @param [Symbol|String] attr attribute name or key to return the value for
     def [](attr)
